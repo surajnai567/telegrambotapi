@@ -4,13 +4,13 @@ from utils import download_image, download_video, delete_video_photo, job_sendin
 import threading
 import telegram
 import telegram.ext
-from apscheduler.schedulers.blocking import BlockingScheduler
 import time
 import os
+from scheduler import sch
 
 token = os.getenv('my_token')
 bot = MyBot(bot_token=token)
-sch = BlockingScheduler()
+#sch = BlockingScheduler()
 send_message = True
 has_message = False
 video_extension = ['avi', 'mp4', 'mkv', '3gp']
@@ -94,8 +94,8 @@ def callback_query_handler(update, context):
 ####################################################################################
 
 def start_message_sending():
-    global message, message_sending_index, send_message, list_of_active_jobs
-    sch.start()
+    pass
+#    sch.start()
     #while True:
      #   while send_message:
             #schedule.run_pending()
@@ -363,8 +363,8 @@ bot.add_command_handler('add', add)
 bot.add_message_handler_text(echo_text)
 bot.add_message_handler_photo(echo_photo)
 bot.add_message_handler_video(echo_video)
-message_sending_thread = threading.Thread(target=start_message_sending)
-message_sending_thread.start()
+#message_sending_thread = threading.Thread(target=start_message_sending)
+#message_sending_thread.start()
 bot.start_polling()
 
 
