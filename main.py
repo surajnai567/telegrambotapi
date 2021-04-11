@@ -7,8 +7,7 @@ import telegram.ext
 import time
 import os
 from apscheduler.schedulers.blocking import BlockingScheduler
-#from scheduler import sch
-
+print("starting...")
 token = os.getenv('my_token')
 bot = MyBot(bot_token=token)
 sch = BlockingScheduler()
