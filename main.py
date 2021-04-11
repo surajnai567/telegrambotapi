@@ -363,8 +363,8 @@ bot.add_command_handler('add', add)
 bot.add_message_handler_text(echo_text)
 bot.add_message_handler_photo(echo_photo)
 bot.add_message_handler_video(echo_video)
-#message_sending_thread = threading.Thread(target=start_message_sending)
-#message_sending_thread.start()
+message_sending_thread = threading.Thread(target=start_message_sending)
+message_sending_thread.start()
 bot.start_polling()
 
 
