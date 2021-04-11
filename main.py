@@ -327,7 +327,7 @@ def echo_photo(update, context):
     if current_command == 'upload':
         current_command = 'o'
         chat = update.message['chat']['id']
-        photo_id = update.message['photo'][0]['file_id']
+        photo_id = update.message['photo'][-1]['file_id']
         random_string = str(time.time())
         download_image(chat, photo_id, random_string)
         #attatchents.append('photo.jpg'+ random_string)
