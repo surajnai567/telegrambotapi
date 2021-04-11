@@ -4,8 +4,14 @@
 token = "1776664489:AAGN98t5Za0lj44BCktiq-QTGAs1i4OHZ9c"
 
 
-chat_id = [1362506121] #, -598143010, -1001347129735, ]
+#bot_id = [-598143010] #-1001347129735, ]
+##my details
 bot_id = [1362506121]
+chat_id = [-598143010]#[1362506121]
+
+#bot_id = [892842231]
+#chat_id = [-1001178327960] #,[-1001347129735]
+#-1001178327960
 
 
 button_url = ["https://t.me/tbocker", "https://t.me/tbocker"]

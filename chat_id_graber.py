@@ -4,9 +4,9 @@ add bot tot the groups or channels
 send message to those groups
 call this function
 """
-
+import config
 import requests
-token = "1776664489:AAGN98t5Za0lj44BCktiq-QTGAs1i4OHZ9c"
+token = config.token
 
 
 def chat_id_grabber(token):
@@ -15,6 +15,7 @@ def chat_id_grabber(token):
     res = requests.get(url=url)
     key = res.json()
     for k in key['result']:
+        print(k)
         for j in k:
             if j == "channel_post" or j == "my_chat_member":
                 chat_id[k[j]['chat']['title']] = k[j]['chat']['id']
@@ -22,4 +23,4 @@ def chat_id_grabber(token):
 
 
 if __name__ == '__main__':
-    chat_id_grabber(token)
+    print(chat_id_grabber(config.token))

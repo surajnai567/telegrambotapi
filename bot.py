@@ -27,6 +27,14 @@ class MyBot:
                                 caption=caption, reply_markup=markup)
         print("message sent....")
 
+    def send_video_with_button_caption(self, chat_id, caption:str=None, image_url=None, buttons:list=[]):
+        buttons = [telegram.InlineKeyboardButton(text=text, url=url) for text, url in buttons]
+        markup = telegram.InlineKeyboardMarkup(inline_keyboard=[[button] for button in buttons])
+        for chat in chat_id:
+            self.bot.send_video(chat_id=chat, video=open(image_url, 'rb'),
+                                caption=caption, reply_markup=markup)
+        print("message sent....")
+
     def add_command_handler(self, command:str, func):
         self.dp.add_handler(CommandHandler(command, func))
 
