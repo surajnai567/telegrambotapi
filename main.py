@@ -4,12 +4,12 @@ from utils import download_image, download_video, delete_video_photo, job_sendin
 import threading
 import telegram
 import telegram.ext
-import config
 from apscheduler.schedulers.blocking import BlockingScheduler
 import time
+import os
 
-
-bot = MyBot(bot_token=config.token)
+token = os.getenv('my_token')
+bot = MyBot(bot_token=token)
 sch = BlockingScheduler()
 send_message = True
 has_message = False

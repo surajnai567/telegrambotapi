@@ -1,10 +1,10 @@
 import requests
-from config import token
-import os
+#from config import token
 import schedule
 import os
 from bot import MyBot
 
+token = os.getenv('my_token')
 def download_image(chat_id, photo_id, index):
     url = 'https://api.telegram.org/bot%s/%s' % (token, 'getFile')
     params = {"chat_id": chat_id, "file_id": photo_id}

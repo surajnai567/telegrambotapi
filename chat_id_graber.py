@@ -6,7 +6,9 @@ call this function
 """
 import config
 import requests
-token = config.token
+import os
+#token = config.token
+token = os.getenv('my_token')
 
 
 def chat_id_grabber(token):
