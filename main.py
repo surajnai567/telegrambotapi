@@ -6,11 +6,12 @@ import telegram
 import telegram.ext
 import time
 import os
-from scheduler import sch
+from apscheduler.schedulers.blocking import BlockingScheduler
+#from scheduler import sch
 
 token = os.getenv('my_token')
 bot = MyBot(bot_token=token)
-#sch = BlockingScheduler()
+sch = BlockingScheduler()
 send_message = True
 has_message = False
 video_extension = ['avi', 'mp4', 'mkv', '3gp']
