@@ -11,6 +11,7 @@ from scheduler import sch
 token = os.getenv('my_token')
 bot = MyBot(bot_token=token)
 #sch = BlockingScheduler()
+sch.start()
 send_message = True
 has_message = False
 video_extension = ['avi', 'mp4', 'mkv', '3gp']
